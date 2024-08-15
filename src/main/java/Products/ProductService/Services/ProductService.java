@@ -60,7 +60,6 @@ public class ProductService {
         p=dtoMapper.toDto(q);
         return p;
     }
-
     public ProductDto getProductBycCategoryName(String category){
         ProductDetails pdetails=productRepo.findByCategory(category);
         if(pdetails==null){
@@ -100,7 +99,6 @@ public class ProductService {
     }
     public List<ProductDto> getProductByMatch(String name){
         List<ProductDetails> d=productRepo.findByTitleContains(name);
-      //  System.out.println(d.toString()+"Hello");
         if(d==null){
             throw new CustomExceptions("No items found with"+" "+name);
         }
