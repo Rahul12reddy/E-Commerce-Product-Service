@@ -100,7 +100,7 @@ public class ProductService {
     public List<ProductDto> getProductByMatch(String name){
         List<ProductDetails> d=productRepo.findByTitleContains(name);
         if(d==null){
-            throw new CustomExceptions("No items found with"+" "+name);
+            throw new CustomExceptions("No items found with the"+" "+name);
         }
         List<ProductDto> dtoList=new ArrayList<>();
         for(ProductDetails i: d){
